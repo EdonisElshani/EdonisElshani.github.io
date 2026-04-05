@@ -67,22 +67,7 @@
       white-space:nowrap;
     }
 
-    .menu-toggle{
-      display:none;
-      background:none;
-      border:none;
-      padding:8px;
-      cursor:pointer;
-    }
-
-    .menu-toggle span{
-      display:block;
-      width:24px;
-      height:2px;
-      background:var(--text);
-      margin:5px 0;
-      border-radius:2px;
-    }
+    .menu-toggle{display:none;}
 
     nav ul{
       list-style:none;
@@ -396,44 +381,6 @@
     @media (max-width: 640px){
       .wrap{
         padding:0 18px;
-      }
-
-      .nav{
-        min-height:68px;
-        padding:10px 0;
-        flex-direction:row;
-        align-items:center;
-      }
-
-      .brand{
-        font-size:1.02rem;
-      }
-
-      .menu-toggle{
-        display:block;
-        margin-left:auto;
-      }
-
-      nav{
-        width:100%;
-        display:none;
-        padding-top:10px;
-      }
-
-      nav.open{
-        display:block;
-      }
-
-      nav ul{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:10px;
-        padding:6px 0 4px;
-      }
-
-      nav a{
-        font-size:0.98rem;
-        padding:4px 0;
       }
 
       main{
