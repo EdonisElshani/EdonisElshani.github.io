@@ -1,19 +1,21 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Edonis Elshani</title>
   <meta name="description" content="Personal academic website of Edonis Elshani." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     :root{
-      --text:#111827;
-      --muted:#6b7280;
+      --text:#000000;
+      --muted:#3d3d47;
       --line:#e5e7eb;
-      --bg:#ffffff;
-      --soft:#f8fafc;
+      --bg:#fffffff8;
+      --soft:#f8fafcf2;
       --link:#1f4ed8;
       --max:980px;
+      --header-bg:#f9fbfb; /* neue Farbe fuer obere Leiste */
     }
 
     *{box-sizing:border-box}
@@ -45,7 +47,7 @@
       position:sticky;
       top:0;
       z-index:20;
-      background:rgba(255,255,255,0.94);
+      background:var(--header-bg);
       backdrop-filter: blur(8px);
       border-bottom:1px solid var(--line);
     }
@@ -54,7 +56,7 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      min-height:64px;
+      min-height:72px; /* etwas hoeher als vorher */
       gap:18px;
     }
 
@@ -87,7 +89,7 @@
     }
 
     main{
-      padding:44px 0 72px;
+      padding:140px 0 72px; /* mehr Abstand zwischen oberer Leiste und Inhalt */
     }
 
     .hero{
@@ -95,6 +97,7 @@
       grid-template-columns: 1.25fr 0.75fr;
       gap:34px;
       align-items:start;
+      margin-top:35px;
       margin-bottom:34px;
     }
 
@@ -134,6 +137,11 @@
       font-size:0.95rem;
     }
 
+    .pill i{
+      font-size:1.2rem;
+      margin-right:8px;
+    }
+
     .portrait{
       border:1px solid var(--line);
       background:linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
@@ -145,6 +153,15 @@
       flex-direction:column;
       text-align:center;
       padding:26px;
+    }
+
+    .portrait img{
+      width:250px;
+      height:250px;
+      border-radius:50%;
+      object-fit:cover;
+      object-position:center;
+      margin-bottom:14px;
     }
 
     .portrait .initials{
@@ -229,6 +246,37 @@
       background:#fff;
     }
 
+    .repo-image{
+      width:100%;
+      height:180px;
+      object-fit:cover;
+      border-radius:12px;
+      border:1px solid var(--line);
+      margin-bottom:14px;
+      background:#f3f4f6;
+      transition:transform 220ms ease, box-shadow 220ms ease;
+      transform-origin:center;
+    }
+
+    .card:hover .repo-image{
+      transform:scale(1.02);
+      box-shadow:0 8px 20px rgba(15, 23, 42, 0.12);
+    }
+
+    .repo-image-contain{
+      object-fit:contain;
+      background:#ffffff;
+    }
+
+    .repo-image-bottom{
+      object-position:center bottom;
+    }
+
+    .repo-image-pendulum{
+      object-fit:cover;
+      object-position:center;
+    }
+
     .card h3{
       margin:0 0 6px;
       font-size:1.02rem;
@@ -286,6 +334,7 @@
 
       .portrait{
         min-height:220px;
+        margin-top:40px;
       }
     }
 
@@ -302,10 +351,10 @@
       }
 
       main{
-        padding-top:28px;
+        padding-top:80px;
       }
     }
-  </style>
+    </style>
 </head>
 <body>
   <header>
@@ -314,10 +363,11 @@
       <nav aria-label="Primary">
         <ul>
           <li><a href="#about">About</a></li>
-          <li><a href="#cv">CV</a></li>
-          <li><a href="#publications">Publications</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#github">GitHub</a></li>
+          <li><a href="#cv">CV</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#awards">Awards</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -331,26 +381,22 @@
           <h1>Edonis Elshani</h1>
           <div class="subtitle">Robotics, Optimization, and Autonomous Systems</div>
           <p class="lead">
-            I am a Master's student at the Technical University of Munich and a visiting research fellow at Harvard University.
-            My work focuses on geometric mechanics, certifiable trajectory optimization, and robotics.
+            I am a double degree student in Electrical Engineering at the Technical University of Munich and the University of Queensland, and a Visiting Research Fellow at Harvard University. I am interested in autonomous systems, robotics, and machine learning.
           </p>
           <p class="lead">
-            I am especially interested in combining mathematically rigorous modeling with practical robotic systems, from
-            autonomous driving and localization to trajectory optimization on Lie groups.
+            My goal is to enhance the accuracy and robustness of autonomous systems through the integration of learning-based approaches and optimization methods.
           </p>
 
           <div class="quick-links">
-            <a class="pill" href="mailto:edonis.elshani29@gmail.com">Email</a>
-            <a class="pill" href="https://www.linkedin.com/in/edonis-elshani" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a class="pill" href="https://github.com/EdonisElshani" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a class="pill" href="#cv">Short CV</a>
+            <a class="pill" href="mailto:edonis.elshani29@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+            <a class="pill" href="https://www.linkedin.com/in/edonis-elshani" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a class="pill" href="https://github.com/EdonisElshani" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+            <a class="pill" href="#cv"><i class="fas fa-file"></i> CV</a>
           </div>
         </div>
 
         <div class="portrait">
-          <div class="initials">EE</div>
-          <div><strong>Add your photo here</strong></div>
-          <div class="caption">Replace this panel with a portrait, research image, or lab photo.</div>
+          <img src="profile.jpeg" alt="Portrait of Edonis Elshani" />
         </div>
       </div>
     </section>
@@ -361,85 +407,28 @@
         <div>
           <p>
             I am currently working on my Master's thesis at the Computational Robotics Group at Harvard University,
-            where I develop Lie group variational integrators and semidefinite relaxations for trajectory optimization
-            of robotic systems.
+            where I focus on certifiable trajectory optimization for robotic systems using sparse semidefinite
+            relaxations and Lie-group-based modeling.
           </p>
           <p>
-            Before that, I worked at BMW on Level 3 autonomous driving and at Knorr-Bremse on sensor validation and
-            integration for rail applications.
+            Previously, I worked at BMW on fail-operational motion control concepts for Level 3 autonomous driving and
+            at Knorr-Bremse in sensors and integration for rail applications.
+          </p>
+          <p>
+            I am pursuing a double degree between the Technical University of Munich and the University of Queensland,
+            combining studies in automation, robotics, optimization, and machine learning with interests in
+            entrepreneurship, international business, power systems, electricity markets, and renewable energy.
           </p>
         </div>
         <div>
           <strong>Current interests</strong>
           <ul class="clean">
-            <li>Geometric mechanics and Lie group methods</li>
-            <li>Trajectory optimization and certifiable optimization</li>
-            <li>Autonomous systems and robotic decision-making</li>
-            <li>Localization, mapping, and navigation in ROS2</li>
+            <li>Lie group variational integrators and certifiable trajectory optimization via semidefinite relaxations</li>
+            <li>Control and motion planning for autonomous and robotic systems</li>
+            <li>Machine learning and optimization methods</li>
+            <li>Safe human-robot interaction and collaboration</li>
           </ul>
         </div>
-      </div>
-    </section>
-
-    <section id="cv">
-      <h2>Short CV</h2>
-
-      <div class="item">
-        <div class="item-head">
-          <div class="item-title">Harvard University</div>
-          <div class="item-meta">Feb 2026 - Aug 2026</div>
-        </div>
-        <div class="item-sub">Visiting Research Fellow, Computational Robotics Group</div>
-        <ul class="clean">
-          <li>Lie group variational integrators for rigid body dynamics</li>
-          <li>Polynomial and semidefinite approaches to trajectory optimization</li>
-          <li>Supervisor: Prof. Heng Yang</li>
-        </ul>
-      </div>
-
-      <div class="item">
-        <div class="item-head">
-          <div class="item-title">BMW AG</div>
-          <div class="item-meta">Sep 2024 - Feb 2025</div>
-        </div>
-        <div class="item-sub">Intern, Autonomous Driving Level 3</div>
-        <ul class="clean">
-          <li>Fault response models for highly automated driving functions</li>
-          <li>Validation and risk assessment for safety-critical maneuvers</li>
-          <li>Sensor requirements and HMI concepts for automated systems</li>
-        </ul>
-      </div>
-
-      <div class="item">
-        <div class="item-head">
-          <div class="item-title">Technical University of Munich</div>
-          <div class="item-meta">M.Sc. expected 2026</div>
-        </div>
-        <div class="item-sub">Electrical Engineering and Information Technology</div>
-        <ul class="clean">
-          <li>Current grade: 1.3</li>
-          <li>Specialization: Automation and Robotics</li>
-        </ul>
-      </div>
-
-      <p style="margin-top:18px;">
-        <a href="Edonis_Elshani_CV.pdf">Download CV (PDF)</a>
-      </p>
-    </section>
-
-    <section id="publications">
-      <h2>Publications</h2>
-
-      <div class="item">
-        <div class="item-head">
-          <div class="item-title">Towards Unconstrained Collision Injury Protection Data Sets: Initial Surrogate Experiments for the Human Hand</div>
-          <div class="item-meta">IROS 2024</div>
-        </div>
-        <div class="item-sub">Robin J. Kirschner, Jinyu Yang, Edonis Elshani, Carina M. Micheler, et al.</div>
-        <p>
-          Co-authored publication on experimental injury datasets for unconstrained human-robot collision scenarios.
-        </p>
-        <a href="https://ieeexplore.ieee.org/document/10801892" target="_blank" rel="noopener noreferrer">Paper link</a>
       </div>
     </section>
 
@@ -460,46 +449,181 @@
     <section id="github">
       <h2>GitHub</h2>
       <p>
-        Replace the placeholders below with links to your repositories. This section is here because apparently humans
-        like clicking boxes more than reading PDFs.
+        Selected repositories covering control, estimation, machine learning, and certifiable trajectory optimization.
       </p>
 
       <div class="cards">
         <div class="card">
-          <h3>Repository 1</h3>
-          <p>Short description of your project, for example your numerical simulations or robotics code.</p>
+          <img src="Drone.gif" alt="Preview image for Quadrotor PD Controller project" class="repo-image repo-image-bottom" />
+          <h3>Quadrotor PD Controller Dojo</h3>
+          <p>
+            Julia-based implementation of a PD feedback controller for quadrotor stabilization and navigation in the Dojo simulation environment, including position and attitude control.
+          </p>
           <div class="repo-links">
-            <a href="https://github.com/EdonisElshani" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="#">Demo / Notes</a>
+            <a href="https://github.com/EdonisElshani/Quadrotor-PD-Controller-Dojo" target="_blank" rel="noopener noreferrer">Repository</a>
           </div>
         </div>
 
         <div class="card">
-          <h3>Repository 2</h3>
-          <p>Add another project here, such as localization, control, or optimization work.</p>
+          <img src="vehicle_state_estimation.png" alt="Preview image for Vehicle State Estimation project" class="repo-image repo-image-contain" />
+          <h3>Vehicle State Estimation in Automotive Electromobility</h3>
+          <p>
+            MATLAB implementation of a grey-box recursive least squares method for real-time estimation of electric vehicle parameters such as battery condition and vehicle mass.
+          </p>
           <div class="repo-links">
-            <a href="https://github.com/EdonisElshani" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="#">Demo / Notes</a>
+            <a href="https://github.com/EdonisElshani/Vehicle-State-Estimation-in-Automotive-Electromobility" target="_blank" rel="noopener noreferrer">Repository</a>
           </div>
         </div>
 
         <div class="card">
-          <h3>Repository 3</h3>
-          <p>Use this card for a project you want recruiters or researchers to notice first.</p>
+          <img src="MLP1551.png" alt="Preview image for MLP and Elman neural networks project" class="repo-image repo-image-contain" />
+          <h3>MLP &amp; Elman Neural Networks for System Identification</h3>
+          <p>
+            MATLAB project implementing Multi-Layer Perceptron and Elman recurrent neural networks for system identification tasks.
+          </p>
           <div class="repo-links">
-            <a href="https://github.com/EdonisElshani" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="#">Demo / Notes</a>
+            <a href="https://github.com/EdonisElshani/MLP-Elman-Neural-Network-System-Identification" target="_blank" rel="noopener noreferrer">Repository</a>
           </div>
         </div>
 
         <div class="card">
-          <h3>Repository 4</h3>
-          <p>Optional extra project card. Delete it if you want a cleaner page.</p>
+          <img src="Pendulum.png" alt="Preview image for Certifiable Trajectory Optimization project" class="repo-image repo-image-contain" />
+          <h3>Certifiable Trajectory Optimization</h3>
+          <p>
+            Research repository on Lie-group dynamics, polynomial formulations, and semidefinite relaxations for certifiable trajectory optimization of robotic systems.
+          </p>
           <div class="repo-links">
-            <a href="https://github.com/EdonisElshani" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="#">Demo / Notes</a>
+            <a href="https://github.com/EdonisElshani/Certifiable_Trajectory_Optimization" target="_blank" rel="noopener noreferrer">Repository</a>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="cv">
+      <h2>CV</h2>
+
+      <h3 style="margin-top:0;">Experience</h3>
+
+      <div class="item">
+        <div class="item-head">
+          <div class="item-title">Harvard University</div>
+          <div class="item-meta">Feb 2026 - Aug 2026</div>
+        </div>
+        <div class="item-sub">Visiting Research Fellow, Computational Robotics Group</div>
+        <p>
+          Research topic: certifiable trajectory optimization for robotic systems using semidefinite relaxations.
+        </p>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <div class="item-title">BMW AG</div>
+          <div class="item-meta">Sep 2024 - Feb 2025</div>
+        </div>
+        <div class="item-sub">Intern, Autonomous Driving Level 3</div>
+        <p>
+          Focus: Fail-Operational Motion Control and HMI for highly automated driving systems.
+        </p>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <div class="item-title">Knorr-Bremse AG</div>
+          <div class="item-meta">Nov 2023 - Aug 2024</div>
+        </div>
+        <div class="item-sub">Working Student, Sensors &amp; Integration</div>
+        <p>
+          Focus: sensor validation, integration, automated testing, and compliance analysis for rail applications.
+        </p>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <div class="item-title">Munich Institute of Robotics and Machine Intelligence</div>
+          <div class="item-meta">Feb 2023 - Jul 2023</div>
+        </div>
+        <div class="item-sub">Bachelor Thesis</div>
+        <p>
+          Research topic: experimental human-robot interaction and unconstrained collision injury analysis.
+        </p>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <div class="item-title">Expleo Group</div>
+          <div class="item-meta">May 2022 - Oct 2022</div>
+        </div>
+        <div class="item-sub">Intern / Working Student, Vehicle Development</div>
+        <p>
+          Focus: ECU software validation, hardware-in-the-loop testing, and vehicle-level system testing.
+        </p>
+      </div>
+
+      <h3 style="margin-top:36px;">Education</h3>
+
+      <div class="item">
+        <div class="item-head">
+          <div class="item-title">Technical University of Munich</div>
+          <div class="item-meta">Oct 2023 - Sep 2026 (expected)</div>
+        </div>
+        <div class="item-sub">M.Sc. in Electrical Engineering and Information Technology</div>
+        <p>
+          Focus: Automation &amp; Robotics, with coursework in optimization, autonomous systems, robotics, machine learning, and neural networks.
+        </p>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <div class="item-title">University of Queensland</div>
+          <div class="item-meta">Feb 2025 - Sep 2026 (expected)</div>
+        </div>
+        <div class="item-sub">Master of Engineering Science (Management), Double Degree</div>
+        <p>
+          Focus: entrepreneurship, international business, system dynamics, power systems, electricity markets, and renewable energy integration.
+        </p>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <div class="item-title">Technical University of Munich</div>
+          <div class="item-meta">Oct 2019 - Jul 2023</div>
+        </div>
+        <div class="item-sub">B.Sc. in Electrical Engineering and Information Technology</div>
+        <p>
+          Foundation in electrical engineering, information technology, and engineering mathematics.
+        </p>
+      </div>
+
+      <p style="margin-top:18px;">
+        <a href="Edonis_Elshani_CV.pdf"><i class="fas fa-download"></i> Download CV (PDF)</a>
+      </p>
+    </section>
+
+    <section id="awards">
+      <h2>Awards & Honors</h2>
+
+      <div class="item">
+        <div class="item-head">
+          <div class="item-title">Heinrich and Lotte Mühlfenzl Foundation Scholarship</div>
+          <div class="item-meta">Mar. 2026</div>
+        </div>
+        <div class="item-sub">Technical University of Munich</div>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <div class="item-title">Dean's Commendation for Academic Excellence - Semester 2</div>
+          <div class="item-meta">Mar. 2026</div>
+        </div>
+        <div class="item-sub">The University of Queensland</div>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <div class="item-title">Dean's Commendation for Academic Excellence - Semester 1</div>
+          <div class="item-meta">Aug. 2025</div>
+        </div>
+        <div class="item-sub">The University of Queensland</div>
       </div>
     </section>
 
@@ -508,15 +632,58 @@
       <div class="news-list">
         <div class="news-item">
           <div class="news-date">Mar 2026</div>
-          <div>Awarded the Heinrich and Lotte Mühlfenzl Foundation Scholarship in support of my research stay at Harvard University.</div>
+          <div>
+            Awarded the Heinrich and Lotte Mühlfenzl Foundation Scholarship in support of my research stay at Harvard University.
+          </div>
         </div>
+
         <div class="news-item">
-          <div class="news-date">2025</div>
-          <div>Received Dean’s Commendation for Academic Excellence at the University of Queensland.</div>
+          <div class="news-date">Mar 2026</div>
+          <div>
+            Received Dean's Commendation for Academic Excellence for Semester 2 at the University of Queensland.
+          </div>
         </div>
+
         <div class="news-item">
-          <div class="news-date">2024</div>
-          <div>Co-authored a paper published at IROS 2024 on unconstrained collision injury protection data sets.</div>
+          <div class="news-date">Feb 2026</div>
+          <div>
+            Joined the <a href="https://computationalrobotics.seas.harvard.edu/" target="_blank" rel="noopener noreferrer">Computational Robotics Group</a> at Harvard University as a Visiting Research Fellow, where I work on certifiable trajectory optimization using semidefinite relaxations, under the supervision of Prof. <a href="https://hankyang.seas.harvard.edu/" target="_blank" rel="noopener noreferrer">Heng Yang</a>.
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">Aug 2025</div>
+          <div>
+            Received Dean's Commendation for Academic Excellence for Semester 1 at the University of Queensland.
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">Feb 2025</div>
+          <div>
+            Started the <a href="https://study.uq.edu.au/study-options/programs/master-engineering-science-management-5530#:~:text=Our%20technical%20postgraduate%20program%20for%20engineers%20wanting%20to,designed%20for%20applicants%20with%20a%20background%20in%20engineering." target="_blank" rel="noopener noreferrer">double degree Master’s program in Engineering Science</a> at the University of Queensland in cooperation with the Technical University of Munich, including two semesters of study in Brisbane (Australia) with a focus on entrepreneurship, international business, as well as power engineering, electricity markets, and renewable energy.
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">Sep 2024</div>
+          <div>
+            Joined BMW for a six-month full-time internship in autonomous driving development, focusing on Fail-Operational Motion Control for Level 3 systems.
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">Oct 2024</div>
+          <div>
+            Co-authored a paper published at <a href="https://ieeexplore.ieee.org/document/10801892" target="_blank" rel="noopener noreferrer">IROS 2024</a> on unconstrained collision injury protection data sets for human-robot interaction.
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">Oct 2023</div>
+          <div>
+            Started the <a href="https://www.cit.tum.de/en/cit/studies/degree-programs/master-electrical-engineering-information-technology/" target="_blank" rel="noopener noreferrer">Master's program in Electrical Engineering and Information Technology</a> at the Technical University of Munich, specializing in Automation and Robotics, with a focus on control, optimization, and machine learning for autonomous systems.
+          </div>
         </div>
       </div>
     </section>
@@ -527,17 +694,18 @@
         The easiest way to reach me is by email. You can also find me on GitHub and LinkedIn.
       </p>
       <div class="quick-links">
-        <a class="pill" href="mailto:edonis.elshani29@gmail.com">edonis.elshani29@gmail.com</a>
-        <a class="pill" href="https://github.com/EdonisElshani" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a class="pill" href="https://www.linkedin.com/in/edonis-elshani" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="pill" href="mailto:edonis.elshani29@gmail.com"><i class="fas fa-envelope"></i> edonis.elshani29@gmail.com</a>
+        <a class="pill" href="https://github.com/EdonisElshani" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+        <a class="pill" href="https://www.linkedin.com/in/edonis-elshani" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="wrap" style="padding:0;">
-      © 2026 Edonis Elshani. Built as a simple GitHub Pages single-file site.
+      Â© 2026 Edonis Elshani. Built as a simple GitHub Pages single-file site.
     </div>
   </footer>
 </body>
 </html>
+
