@@ -252,6 +252,20 @@
       white-space:nowrap;
     }
 
+    .publication-badge{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
+      gap:8px;
+    }
+
+    .publication-logo{
+      width:108px;
+      max-width:100%;
+      height:auto;
+      display:block;
+    }
+
     .item-sub{
       color:var(--muted);
       margin-top:2px;
@@ -499,6 +513,14 @@
         gap:4px;
       }
 
+      .publication-badge{
+        align-items:flex-start;
+      }
+
+      .publication-logo{
+        width:96px;
+      }
+
       .repo-image{
         height:170px;
       }
@@ -596,7 +618,14 @@
           <div class="item-title">
             Towards Unconstrained Collision Injury Protection Data Sets: Initial Surrogate Experiments for the Human Hand
           </div>
-          <div class="item-meta">IROS 2024</div>
+          <div class="publication-badge">
+            <div class="item-meta">IROS 2024</div>
+            <img
+              src="iros2024-logo.png"
+              alt="Official IROS 2024 Abu Dhabi logo"
+              class="publication-logo"
+            />
+          </div>
         </div>
         <div class="item-sub">
           Robin J. Kirschner, Jinyu Yang, Edonis Elshani, Carina M. Micheler, et al.
